@@ -18,12 +18,12 @@ namespace NavigationDrawerControlForWPF.Controls
 	[TemplateVisualState(GroupName = "ViewStates", Name = "MenuOpened")]
 	public class NavigationDrawer : Control
 	{
-		public static DependencyProperty MenuProperty;
-		public static DependencyProperty MenuHeaderProperty;
-		public static DependencyProperty ContentProperty;
-		public static DependencyProperty MenuBackgroundProperty;
-		public static DependencyProperty MenuWidthProperty;
-		public static DependencyProperty IsMenuOpenProperty;
+		public readonly static DependencyProperty MenuProperty;
+		public readonly static DependencyProperty MenuHeaderProperty;
+		public readonly static DependencyProperty ContentProperty;
+		public readonly static DependencyProperty MenuBackgroundProperty;
+		public readonly static DependencyProperty MenuWidthProperty;
+		public readonly static DependencyProperty IsMenuOpenProperty;
 
 		static NavigationDrawer()
 		{
@@ -32,7 +32,7 @@ namespace NavigationDrawerControlForWPF.Controls
 			MenuProperty = DependencyProperty.Register("Menu", typeof(object), typeof(NavigationDrawer), null);
 			MenuHeaderProperty = DependencyProperty.Register("MenuHeader", typeof(object), typeof(NavigationDrawer), null);
 			ContentProperty = DependencyProperty.Register("Content", typeof(object), typeof(NavigationDrawer), null);
-			MenuBackgroundProperty = DependencyProperty.Register("MenuBackground", typeof(Color), typeof(NavigationDrawer), null);
+			MenuBackgroundProperty = DependencyProperty.Register("MenuBackground", typeof(Brush), typeof(NavigationDrawer), null);
 			MenuWidthProperty = DependencyProperty.Register("MenuWidth", typeof(double), typeof(NavigationDrawer), null);
 			IsMenuOpenProperty = DependencyProperty.Register("IsMenuOpen", typeof(bool), typeof(NavigationDrawer), null);
 		}
@@ -55,9 +55,9 @@ namespace NavigationDrawerControlForWPF.Controls
 			set { SetValue(ContentProperty, value); }
 		}
 
-		public Color MenuBackground
+		public Brush MenuBackground
 		{
-			get { return (Color)GetValue(MenuBackgroundProperty); }
+			get { return (Brush)GetValue(MenuBackgroundProperty); }
 			set { SetValue(MenuBackgroundProperty, value); }
 		}
 
@@ -70,7 +70,11 @@ namespace NavigationDrawerControlForWPF.Controls
 		public bool  IsMenuOpen
 		{
 			get { return (bool)GetValue(IsMenuOpenProperty); }
-			set { SetValue(IsMenuOpenProperty, value); }
+			set
+			{
+				SetValue(IsMenuOpenProperty, value);
+				ChangeVisualState(false);
+			}
 		}
 
 		public override void OnApplyTemplate()
@@ -92,21 +96,15 @@ namespace NavigationDrawerControlForWPF.Controls
 			ChangeVisualState(false);
 		}
 
-		public void OpenMenu()
-		{
-			IsMenuOpen = true;
-			ChangeVisualState(false);
-		}
-
 		void menuDarkSurface_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			IsMenuOpen = !IsMenuOpen;
+			IsMenuOpen = false;
 			ChangeVisualState(false);
 		}
 
 		void OpenMenuButton_Click(object sender, RoutedEventArgs e)
 		{
-			IsMenuOpen = !IsMenuOpen;
+			IsMenuOpen = true;
 			ChangeVisualState(false);
 		}
 

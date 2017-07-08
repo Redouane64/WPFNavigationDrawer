@@ -9,8 +9,7 @@
         Title="MainWindow" Height="350" Width="525">
 	<Grid>
 		<controls:NavigationDrawer MenuWidth="180"
-								   IsMenuOpen="False"
-								   MenuBackground="DarkBlue">
+								   IsMenuOpen="False">
 			<controls:NavigationDrawer.Menu>
 				<StackPanel Orientation="Vertical"
 							HorizontalAlignment="Center"
@@ -40,7 +39,52 @@
 				</StackPanel>
 			</controls:NavigationDrawer.MenuHeader>
 			<controls:NavigationDrawer.Content>
-				<x:Null />
+				<Grid>
+					<GroupBox Margin="4" Height="120" Width="200"
+							  VerticalAlignment="Top" HorizontalAlignment="Left"
+							  Header="Radio Buttons Group">
+						<StackPanel>
+							<RadioButton Margin="0,4">Radio Button 1</RadioButton>
+							<RadioButton Margin="0,4">Radio Button 2</RadioButton>
+							<RadioButton Margin="0,4">Radio Button 3</RadioButton>
+							<RadioButton Margin="0,4">Radio Button 4</RadioButton>
+						</StackPanel>
+					</GroupBox>
+					<TextBlock FontSize="30" TextDecorations="Underline"
+							   VerticalAlignment="Top"
+							   HorizontalAlignment="Right"
+							   Margin="80,10">
+						Hello, World!
+					</TextBlock>
+					<GroupBox Height="120" Width="200"
+							  VerticalAlignment="Top" HorizontalAlignment="Right"
+							  Margin="60,70"
+							  Header="Radio Buttons Group">
+						<StackPanel>
+							<CheckBox Margin="0,4">Item 1</CheckBox>
+							<CheckBox Margin="0,4">Item 2</CheckBox>
+							<CheckBox Margin="0,4">Item 3</CheckBox>
+							<CheckBox Margin="0,4">Item 4</CheckBox>
+						</StackPanel>
+					</GroupBox>
+					<StackPanel Orientation="Horizontal"
+								VerticalAlignment="Bottom"
+								Margin="10,50">
+						<Button Height="24" Width="100"
+								Margin="5,0"
+								Content="Button"/>
+						<Button Height="24" Width="100"
+								Margin="5,0"
+								Content="Button"/>
+						<Button Height="24" Width="100"
+								Margin="5,0"
+								Content="Button"/>
+						<Button Height="24" Width="100"
+								Margin="5,0"
+								Content="Button"/>
+
+					</StackPanel>
+				</Grid>
 			</controls:NavigationDrawer.Content>
 		</controls:NavigationDrawer>
 
