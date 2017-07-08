@@ -1,0 +1,48 @@
+﻿<Window x:Class="NavigationDrawerControlForWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NavigationDrawerControlForWPF"
+		xmlns:controls="clr-namespace:NavigationDrawerControlForWPF.Controls"
+		mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+	<Grid>
+		<controls:NavigationDrawer MenuWidth="180"
+								   IsMenuOpen="False"
+								   MenuBackground="DarkBlue">
+			<controls:NavigationDrawer.Menu>
+				<StackPanel Orientation="Vertical"
+							HorizontalAlignment="Center"
+							Margin="0,5">
+					<TextBlock  FontSize="20" 
+								FontWeight="DemiBold"
+								Foreground="White">Help</TextBlock>
+					<TextBlock FontSize="20" 
+							   FontWeight="DemiBold"
+							   Foreground="White">About</TextBlock>
+					<TextBlock FontSize="20" 
+								FontWeight="DemiBold"
+							   Foreground="White">Quit</TextBlock>
+				</StackPanel>
+			</controls:NavigationDrawer.Menu>
+			<controls:NavigationDrawer.MenuHeader>
+				<StackPanel Orientation="Vertical">
+					<Image Height="92"
+						   Width="92" 
+						   Margin="10" 
+						   Source="Images/PokeBall.png" />
+					<TextBlock Text="Seaweed" 
+							   HorizontalAlignment="Center"
+							   FontSize="20"
+							   FontWeight="Bold" 
+							   Foreground="White"/>
+				</StackPanel>
+			</controls:NavigationDrawer.MenuHeader>
+			<controls:NavigationDrawer.Content>
+				<x:Null />
+			</controls:NavigationDrawer.Content>
+		</controls:NavigationDrawer>
+
+	</Grid>
+</Window>
