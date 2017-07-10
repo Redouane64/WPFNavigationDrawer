@@ -6,8 +6,7 @@
 <Window xmlns:controls="clr-namespace:NavigationDrawerControlForWPF.Controls"
 		...>
 	<Grid>
-		<controls:NavigationDrawer MenuWidth="180"
-									IsMenuOpen="False">
+		<controls:NavigationDrawer MenuWidth="180" IsMenuOpen="False">
 			<controls:NavigationDrawer.MenuHeader>
 
 				<!-- Your menu header contents here -->
