@@ -31,7 +31,7 @@
 						   Width="92" 
 						   Margin="10" 
 						   Source="Images/PokeBall.png" />
-					<TextBlock Text="Seaweed" 
+					<TextBlock Text="Header Text" 
 							   HorizontalAlignment="Center"
 							   FontSize="20"
 							   FontWeight="Bold" 
